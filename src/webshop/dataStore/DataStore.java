@@ -52,14 +52,14 @@ public class DataStore {
 				if (choose == 1) {
 					System.out.println("Enter the productId: ");
 					int inputP = scanner.nextInt();
-					getProductData(stmt, inputP);
+					getProductDetails(stmt, inputP);
 				} else {
 					System.out.println("Enter the orderId: ");
 					int inputO = scanner.nextInt();
 					getOrderDetails(stmt, inputO);
 				}
 			} catch (InputMismatchException e) {
-				System.out.println("Invalid answer. Please try again!");
+				System.out.println("Invalid option. Please try again!");
 			}
 
 		} catch (ClassNotFoundException e) {
@@ -70,7 +70,7 @@ public class DataStore {
 
 	}
 
-	private static void getProductData(Statement stmt, int inputP) throws SQLException {
+	private static void getProductDetails(Statement stmt, int inputP) throws SQLException {
 
 		String query = "SELECT * FROM products p INNER JOIN categories c " + " ON p.category_id = c.category_id "
 				+ " INNER JOIN brands b ON b.brand_id = p.brand_id WHERE p.product_id = " + inputP + ";";
@@ -109,12 +109,16 @@ public class DataStore {
 			int productId = rs.getInt("product_id");
 			String productName = rs.getString("product_name");
 			int quantity = rs.getInt("quantity");
+			
+			
 
 			Order order = OrderManager.getInstance().createOrder(orderId, customerId, orderStatus, orderDate, itemId,
 					productId, productName, quantity);
 			orders.add(order);
 			System.out.println(order);
 		}
+		
+		getProductDetails(stmt, orders.get(orders.size()-1).getProductId());
 	}
 
 }

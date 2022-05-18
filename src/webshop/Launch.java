@@ -9,17 +9,17 @@ public class Launch {
 	//private static List<Product> products;
 
 	public static void main(String[] args) {
-		
-		getProductData();
+		DataStore.getData();
+		//loadData();
 	}
 
-	private static void getProductData() {
-		System.out.println("Getting data...");
+	private static void loadData() {
+		System.out.println("Loading data...");
 		DataStore.getData();
 		
 		//products = ProductManager.getInstance().getProducts();
 		
-		
+	
 		
 	}
 

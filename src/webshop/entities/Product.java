@@ -69,7 +69,7 @@ public class Product {
 	@Override
 	public String toString() {
 		return "product_id:" + productId + ", \nproduct_name: " + productName + ", \nbrand_id: " + brandId + ", \nbrand_name: " + brandName
-				+ ", \ncategory_id: " + categoryId + ", \ncategory_name: " + categoryName + ", \nmodelYear: " + modelYear;
+				+ ", \ncategory_id: " + categoryId + ", \ncategory_name: " + categoryName + ", \nmodelYear: " + modelYear + "\n";
 	}
 
 }

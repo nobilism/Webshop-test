@@ -78,7 +78,7 @@ public class Order {
 	public String toString() {
 		return "order_id: " + orderId + ", \ncustomer_id: " + customerId + ", \norder_status: " + orderStatus
 				+ ", \norder_date: " + orderDate + ", \nitem_id: " + itemId + ", \nproduct_id: " + productId
-				+ ", \nproduct_name: " + productName + ", \nquantity: " + quantity;
+				+ ", \nproduct_name: " + productName + ", \nquantity: " + quantity + "\n";
 	}
 
 }
